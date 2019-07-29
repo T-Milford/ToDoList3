@@ -26,17 +26,28 @@
 // toggleClass() 
 // closest()
 
-// and, Tobie thinks,:
+// and, Tobie thinks:
 // .click()
 // .keyPress (see example from lesson)
 
 $(function () {
-    $('#js-Shopping-List-Form').submit(event => {
+    $('#js-shopping-list-form').submit(event => {
         event.preventDefault();
-        console.log('test');
-        let userInput = $(this).find(input[name="shopping-list-entry"]);
+        let userInput = $(this).find('input[name="shopping-list-entry"]').val();
         console.log(userInput);
-        $('containerOfListItems').append(userInput);
+        userInputListItem = $('<li>
+            <span class="shopping-item">'${userInput}'</span>
+            <div class="shopping-item-controls">
+            <button class="shopping-item-toggle">
+                <span class="button-label">check</span>
+              </button>
+              <button class="shopping-item-delete">
+                <span class="button-label">delete</span>
+            </button>
+            </div>
+      </li>');
+
+        $('shopping-list').append(userInputListItem);
     });
 
 
