@@ -36,19 +36,20 @@ $(function () {
         let userInput = $(this).find('input[name="shopping-list-entry"]').val();
         console.log(userInput);
 
-        userInputListItem = ('<li>
-            <span class="shopping-item">`${userInput}`</span>
+        const userInputListItem = `<li>
+            <span class="shopping-item">${userInput}</span>
             <div class="shopping-item-controls">
             <button class="shopping-item-toggle">
-                <span class="button-label">check</span>
+                <span class="button-label">check</span> 
               </button>
               <button class="shopping-item-delete">
                 <span class="button-label">delete</span>
             </button>
             </div>
-        </li>');
+        </li>`;
 
-        $('shopping-list').append(userInputListItem);
+        $('.shopping-list').append(userInputListItem);
+        
     });
 
 
