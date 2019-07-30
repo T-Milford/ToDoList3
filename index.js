@@ -64,9 +64,9 @@ $(function () {
          $('.shopping-item-toggle').click(event => {
             console.log('clicked!'); 
             event.preventDefault();
-            // problem: it won't know which button-label to change.  
-            // solved: use closest to travel up to the nearest shopping-item.
-            $(this).closest('span.shopping-item').toggleClass('shopping-item__checked');
+            
+            //Why isn't this working??
+            $(this).closest("li span").toggleClass("shopping-item__checked");
         });
         
     
