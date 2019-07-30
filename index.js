@@ -5,17 +5,18 @@
 
 // App should allow:
 
-// -enter items they need to purchase by entering text and hitting "Return"  
-// or clicking "Add item" button
+// DONE enter items they need to purchase by entering text and hitting "Return"  
+// or clicking "Add item" button 
     
-// My thought process:
+    // My thought process:
     // 1) use '.submit' method on button class which runs function that:
     //  a) activates preventDefault for button
     //  b) userInput = button input 
     //  c) append properly-classed HTML containing userInput to js container
 
 
-// -check and uncheck items on the list by clicking the "Check" button
+// 
+
 // -permanently remove items from the list
 
 // Use this and event delegation
@@ -49,11 +50,24 @@ $(function () {
         </li>`;
 
         $('.shopping-list').append(userInputListItem);
-        
     });
 
+        
+    // check and uncheck items on the list by clicking the "Check" button
+    
+    // Outline:
+    // 1) Upon .click of li element, .toggleClass .shopping-item__checked 
+    // 2) Use .closest to target text of item above button being clicked
+    // 3) What about buttons that didn't exist when jQuery was run?
 
 
-
-
+         $('.shopping-item-toggle').click(event => {
+            console.log('clicked!'); 
+            event.preventDefault();
+            // problem: it won't know which button-label to change.  
+            // solved: use closest to travel up to the nearest shopping-item.
+            $(this).closest('.shopping-item').toggleClass('.shopping-item__checked');
+        });
+        
+    
 });
