@@ -66,7 +66,7 @@ $(function () {
             event.preventDefault();
             // problem: it won't know which button-label to change.  
             // solved: use closest to travel up to the nearest shopping-item.
-            $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+            $(this).closest('li.shopping-item').toggleClass('shopping-item__checked');
         });
         
     
