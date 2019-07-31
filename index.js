@@ -56,17 +56,21 @@ $(function () {
     });
 
         
-    // Goal 2: check and uncheck items on the list by clicking the "Check" button
+    // Goal 2: check and uncheck items on the list by clicking the "Check" button.  
     
         // Outline:
         // 1) Upon .click of button element, .toggleClass .shopping-item__checked 
         // 2) Use .closest to target text of item above button being clicked
         // 3) What about buttons that didn't exist when jQuery was run?
-    
             //    ex.  (ul).on(‘click’, ‘li’, function{ })
-          $('.shopping-list').on('click', 'li', function() {
+        // 4) 
+
+          $('.shopping-list').on('click', '.shopping-item-toggle', function() {
             event.preventDefault();
             $(event.target).closest("li").toggleClass("shopping-item__checked");
+            // $(event.target).closest("span.shopping-item").toggleClass("shopping-item__checked"); Why 
+            //doesn't this work?
+            // console.log($(event.target).closest("span.shopping-item")); printing span.button-label?!
           });
          
          
