@@ -3,14 +3,7 @@
 // Use DOM manipulation and traversal to dynamically add and 
 // remove HTML elements and apply styles.
 
-// App should allow:
 
-
-
-
-// 
-
-// -permanently remove items from the list
 
 // Use this and event delegation
 // and some other useful methods: 
@@ -65,15 +58,18 @@ $(function () {
             //    ex.  (ul).on(‘click’, ‘li’, function{ })
         // 4) 
 
-          $('.shopping-list').on('click', '.shopping-item-toggle', function() {
+        $('.shopping-list').on('click', '.shopping-item-toggle', function() {
             event.preventDefault();
-            $(event.target).closest("li").toggleClass("shopping-item__checked");
+            $(event.target).closest("li").find(".shopping-item").toggleClass("shopping-item__checked", 'true');
             // $(event.target).closest("span.shopping-item").toggleClass("shopping-item__checked"); Why 
             //doesn't this work?
             // console.log($(event.target).closest("span.shopping-item")); printing span.button-label?!
-          });
+        });
          
          
-        
+    // Goal 3: permanently remove items from the list
+        $('.shopping-list').on('click', '.shopping-item-delete', function() {
+            $(event.target).closest("li").remove("li");
+        });
     
 });
